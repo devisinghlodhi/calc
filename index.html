@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="logic.js"></script>
+    <style>
+        input{
+            font-size: 23px;
+            margin: 0%;
+            border: none;
+            background-color: rgb(92 92 92);
+            color: white;
+        }
+        .input_box{
+            width: 328px;
+            height: 40px;
+            text-align: right;
+        }
+
+       
+        
+        #input_value2{
+            border: none;
+            width: 332px;
+            height: 20px;
+            font-size: medium;
+        }
+        #input_value1{
+            border: none;
+            width: 332px;
+            font-size: xx-large;
+        }
+
+        #result{
+            border: none;
+            width: 332px;
+            border-bottom: 1px solid black;
+            background-color: rgb(75, 75, 75);
+            color: yellow;
+        }
+
+        .btn , .btn_sign , .num_type{
+            width: 64px;
+            height: 40px;
+            margin-top: 5px;
+        }
+        .num_type{
+            width: 81px;
+        }
+        #btn_eqal{
+            width: 131px;
+            color: yellow;
+        }
+
+
+        .container{
+            margin-top: 20px;
+            margin: 20px 35%;
+            display: block;
+            width: fit-content;
+            margin:  auto;
+            background-color: rgb(92, 92, 92);
+            padding: 2px;
+        }
+        button{
+            font-size: 15px;
+            background-color: black;
+            color: white;
+            border: none;
+        }
+
+        .btn_sign{
+            background-color: rgb(46 46 47);
+        }
+
+        #sign_div:hover, #sign_star:hover, #sign_min:hover, #sign_plus:hover, #sign_mod:hover{
+            background-color: rgb(133, 131, 131);
+        }
+        #sign_div:active, #sign_star:active, #sign_min:active, #sign_plus:active, #sign_mod:active{
+            background-color: rgb(177, 176, 176);
+        }
+
+        button:active{
+            background-color: rgb(133, 131, 131);
+        }
+
+        @media (hover: hover) and (pointer: fine) {
+            button:hover{
+            background-color: rgb(133, 131, 131);
+            }
+
+            button:active{
+            background-color: rgb(177, 176, 176);
+            }
+        }
+        
+        
+        body{
+            background-color: #e0c4fc;
+        }
+
+        h1{
+            text-align: center;
+            font-family: cursive;
+        }
+        
+
+    </style>
+</head>
+<body onload="dec()">
+    <h1>Binary Calculator</h1>
+    <div class="container">
+<!-- 
+    <input type="text" id="result" class="input_box" readonly>         <br> -->
+    <input type="text" id="input_value1" class="input_box" autocomplete="off" readonly>         <br>
+
+
+    <input type="text" id="input_value2" class="input_box" autocomplete="off" readonly>       <br>
+    <button class="num_type" id="bin" onclick="bin()">Binary</button>
+    <button class="num_type" id="dec" onclick="dec()">Decimal</button>
+    <button class="num_type" id="oct" onclick="oct()">Octal</button>
+    <button class="num_type" id="hex" onclick="hex()">Hexa</button>        <br>
+
+    <!-- <br> -->
+    <button class="btn" onclick="set_on_box('A')">A</button>
+    <button class="btn" id="cls_btn" onclick='clear_data()'>cls</button>
+    <button class="btn" onclick="remove_one_char()" style="color: red;">X</button>
+    <button class="btn_sign" id="sign_mod" onclick="insert_sign('%')">%</button>
+    <button class="btn_sign" id="sign_div" onclick="insert_sign('÷')">÷</button>
+    <br>
+    <button class="btn" onclick="set_on_box('B')">B</button>
+    <button class="btn" onclick="set_on_box('7')">7</button>
+    <button class="btn" onclick="set_on_box('8')">8</button>
+    <button class="btn" onclick="set_on_box('9')">9</button>
+    <button class="btn_sign" id="sign_star" onclick="insert_sign('x')">x</button>
+    <br>
+    <button class="btn" onclick="set_on_box('C')">C</button>
+    <button class="btn" onclick="set_on_box('4')">4</button>
+    <button class="btn" onclick="set_on_box('5')">5</button>
+    <button class="btn" onclick="set_on_box('6')">6</button>
+    <button class="btn_sign" id="sign_min"  onclick="insert_sign('-')">-</button>
+    <br>
+    <button class="btn" onclick="set_on_box('D')">D</button>
+    <button class="btn" onclick="set_on_box('1')">1</button>
+    <button class="btn" onclick="set_on_box('2')">2</button>
+    <button class="btn" onclick="set_on_box('3')">3</button>
+    <button class="btn_sign" id="sign_plus" onclick="insert_sign('+')">+</button>
+    <br>
+    <button class="btn" onclick="set_on_box('E')">E</button>
+    <button class="btn" onclick="set_on_box('F')">F</button>
+    <button class="btn" onclick="set_on_box('0')">0</button>
+    <!-- <button class="btn">.</button> -->
+    <button class="btn" id="btn_eqal" value="=" onclick="press_equal()">=</button>
+
+</div>
+
+
+</body>
+</html>
